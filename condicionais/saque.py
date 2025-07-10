@@ -1,5 +1,7 @@
 # Estrtura condicional: if
 
+
+
 try:
     saldo = 2000.0
     saque = (float(input("Informe o valor que deseja sacar: R$")))
