@@ -39,6 +39,7 @@ while True:
             if saque > 500:
                 print("Erro na operação. Não é possível efetuar saques acima de 500 reais")
             else:
+              
                 if saque > saldo:
                     print("Erro na operação. Saldo insuficiente")
                 else:
