@@ -7,13 +7,13 @@ Para prosseguir digite uma das opção abaixo
 [e] - Extrato
 [q] - Sair
 
-=>"""
-deposito = 0
+=> """
+
 saldo = 0
 limite = 500 
 extrato = ""
-numero_saques = 0
-LIMITE_SAQUES = 3
+numero_saques = 3
+#LIMITE_SAQUES = 3
 
 while True:
     
@@ -21,20 +21,37 @@ while True:
     
     if opcao == "d":
         print("Depósito")
-        saldo += float(input("Digite o valor que deseja depositar: "))
-        print(f"Operação concluída!")
+        deposito = float(input("Digite o valor que deseja depositar: R$"))
+        
+        if deposito <= 0:
+            print("Erro na operação. Não é possível depositar valores abaixo de zero.")
+            continue
+        else:
+            saldo += deposito
+            print(f"Operação concluída!")
     
     elif opcao == "s":
-        print("Saque")
-        saldo -= float(input("Digite o valor que deseja sacar: "))
-        numero_saques += 1
-        print(f"Operação concluída!")
+        if numero_saques <= 0:
+            print("Não é possível fazer saques.\nLimite alcançado.\nTente Novamente mais tarde.")
+        else:
+            saque = float(input("Digite o valor que deseja sacar: "))
+            
+            if saque > 500:
+                print("Erro na operação. Não é possível efetuar saques acima de 500 reais")
+            else:
+                if saque > saldo:
+                    print("Erro na operação. Saldo insuficiente")
+                else:
+
+                    saldo -= saque
+                    numero_saques -= 1
+                    print(f"Operação concluída!")
         
     elif opcao == "e":
         print("Extrato")
         print(f"""
-        Saldo atual: {saldo:.2f}
-        Saques disponíveis hoje: {numero_saques}
+        Saldo atual: R${saldo:.2f}
+        Saques disponíveis: {numero_saques}
               """)
     elif opcao == "q":
         print("""
