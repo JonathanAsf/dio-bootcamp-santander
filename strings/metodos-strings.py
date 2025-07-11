@@ -7,7 +7,7 @@ print("variavel.upper() = " + exemploCase.upper())
 print("variavel.lower() = " + exemploCase.lower())
 print("variavel.title() = " + exemploCase.title())
 
-praticaCase = input("Digite um texto para ser tradado: ")
+praticaCase = input("Digite um texto para ser tratado: ")
 print(f"Utilizando método upper no texto: {praticaCase.upper()}")
 print(f"Utilizando método lower no texto: {praticaCase.lower()}")
 print(f"Utilizando método title no texto: {praticaCase.title()}")
@@ -25,3 +25,13 @@ print(praticaStrip.strip()) #remove espaços extras do texto
 print(praticaStrip.lstrip())#Remove espaços da esquerda
 print(praticaStrip.rstrip()) #Remove espaços da direita
 
+#Centralizar texto com numero de caracteres específicos
+
+
+textoCentralizado= "Python"
+print("Exemplo utilizando center")
+print(textoCentralizado.center(10,"#")) #preenche com # até ter no minimo 10 caracteres. Mantém o texto centralizado
+
+print("\nExemplo utilizando join")
+
+print(".".join(textoCentralizado)) #Adicione um . entre as letras. É mais utilizado para listas ou diretórios
