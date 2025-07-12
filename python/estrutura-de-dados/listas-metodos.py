@@ -1,5 +1,6 @@
+print("Metodos string")
 #Append
-print("Método append\n")
+print("\nMétodo append\n")
 lista = []
 lista.append(1)
 lista.append("Python")
@@ -53,9 +54,11 @@ print("Remove o item da lista pelo nome")
 
 print(linguagens)
 linguagens.remove("js")
+print(linguagens)
 
-#reverse
-print("\nMetodo reverse")
+#sort
+print("\nMetodo sort")
 lista_compras = ["ketchup","ovo","mostarda","arroz","batata","frango"]
 print(lista_compras)
-print(lista_compras.sort())
+lista_compras.sort() #sorted(lista_compras) -> outra forma de fazer
+print(lista_compras)
