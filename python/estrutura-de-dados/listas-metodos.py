@@ -52,7 +52,7 @@ print("\nMetodo remove")
 print("Remove o item da lista pelo nome")
 
 print(linguagens)
-linguagens.remove("c")
+linguagens.remove("js")
 
 #reverse
 print("\nMetodo reverse")
