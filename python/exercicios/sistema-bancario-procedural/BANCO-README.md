@@ -31,16 +31,25 @@ O sistema oferece as seguintes operações:
 
 ---
 
-
 ## 📦 Como Executar
 
 1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-2. Acesse o diretório do projeto:
-   ```bash
-   cd sistema-bancario
 
-4. Execute o programa:
+   ```bash
+   git clone https://github.com/seu-usuario/dio-bootcamp-santander.git
+2. Acesse o diretório do projeto:
+
+   ```bash
+   cd dio-bootcamp-santander
+   cd python
+   cd exercicios
+   cd sistema-bancario-procedural
+
+3. Execute o programa:
+
    ```bash
    python sistema_banco.py
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
