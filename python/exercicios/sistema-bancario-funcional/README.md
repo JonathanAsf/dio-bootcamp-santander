@@ -102,7 +102,6 @@ O projeto foi desenvolvido com os seguintes objetivos:
 
 ---
 
-
 ## 🚀 Como Executar
 
 1. Clone o repositório:

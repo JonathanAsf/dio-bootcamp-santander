@@ -5,10 +5,12 @@ def menu():
     Bem vindo ao sistema de bancos mais moderno do País!
     Para prosseguir digite uma das opção abaixo
 
+    [nu] - Novo Usuário
     [d] - Depositar
     [s] - Sacar
     [e] - Extrato
     [q] - Sair
+
 
     => """
     return input(textwrap.dedent(menu))
@@ -55,11 +57,31 @@ def exibe_extrato(saldo, /, *, extrato):
     print(f"\nSaldo:\t\tR$ {saldo:.2f}")
     print("==========")
 
+def cria_usuario(usuarios):
+    cpf = input("Digite o seu cpf (Somente números): ")
+    usuario = filtrar_usuario(cpf,usuarios)
+    
+    if usuario:
+        print("\n@@@ Já existe usuário com esse CPF. @@@")
+        return
+    
+    nome = input("Informe o nome completo: ")
+    data_nascimento = input("Digite a sua data de nascimento(dd-mm-aaaa): ") 
+    endereco = input("Informe o endereço (logradouro, numero, - bairro - cidade (sigla) estado: ")
+    
+    usuarios.append({"nome": nome, "data_nascimento": data_nascimento, "cpf": cpf, "endereco": endereco})
         
+    print("=== Usuário criado com sucesso! ====")    
+    return
+     
+def filtrar_usuario(cpf,usuarios):
+    usuarios_filtrados = [usuario for usuario in usuarios if usuario["cpf"] == cpf]
+    return usuarios_filtrados [0] if usuarios_filtrados else None    
+
 def main():
     LIMITE_SAQUES = 3
     AGENCIA = "0001"
-    
+
     saldo = 0
     limite = 500 
     extrato = ""
@@ -86,11 +108,13 @@ def main():
                 limite = limite,
                 numero_saques = numero_saques,
                 limite_saques = LIMITE_SAQUES,
-            )
-            
+            )        
             
         elif opcao == "e":
             exibe_extrato(saldo, extrato = extrato)
+
+        elif opcao == "nu":
+            cria_usuario(usuarios)
 
         elif opcao == "q":
             print("""
